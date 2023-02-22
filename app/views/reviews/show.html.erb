@@ -1,0 +1,12 @@
+<% render @review %>
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+
+<div>
+<%= link_to "back to restaurant", edit_restaurant_path(@restaurant) %>
+<%= link_to "add a review", new_restaurant_review_path(@restaurant) %>
